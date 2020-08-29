@@ -510,6 +510,21 @@ void Reception(System& s, string a = "p")
 
 			if (checkbox) 
 			{
+				for (int i = 0; i < strlen(name.c_str()); i++) 
+				{
+					if (name[i] == '?') 
+					{
+						name[i] = 'i';
+					}
+				}
+
+				for (int i = 0; i < strlen(surname.c_str()); i++)
+				{
+					if (surname[i] == '?')
+					{
+						surname[i] = 'i';
+					}
+				}
 			User* user = new People(name, surname, age, login, password, "p");
 			s.AddUser(user);
 			}
